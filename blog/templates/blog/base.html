@@ -1,3 +1,7 @@
+
+
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,16 +15,36 @@
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <title>Tu Página</title>
+     
+     
+    
+     
     <style>
-        h1, h2, h3, h4, h5, h6 {
+                /* Estilos para las imágenes */
+                .image-container {
+            display: flex; /* Hace que los elementos hijos se muestren en línea */
+        }
+
+        .image-container img {
+            margin-right: 10px; /* Ajusta el margen entre las imágenes */
+            width: 200px; /* Ajusta el ancho de las imágenes según tus necesidades */
+            height: auto; /* Mantiene la proporción de la imagen */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: purple;
         }
-        
     </style>
 
 </head>
-
 <body>
+
+    
    
     <h2 style="text-align: center;">New Post</h2>
 
@@ -30,14 +54,23 @@
 <hr>
 <h5 style="text-align: center;">Post List</h5>
 
-<h4 style="text-align: center;">últimas entradas</h4>
-<h3 style="text-align: center;">Semana pasada</h3>
-<h2 style="text-align: center;">Sugerencias para nuevos títulos</h2>
+<h4 style="text-align: center;">LA QUE MÁS TE GUSTA</h4>
+<h3 style="text-align: center;">AGRADECEMOS UNA DESCRIPCIÓN DE LAS FOTOS</h3>
+<h2 style="text-align: center;">QUÉ NUEVA TEMÁTICA OS GUSTARÍA INCORPORAR</h2>
 <h1 class="title" style="text-align: center;">{{ post.title }}</h1>
 <p class="text" style="text-align: center;">{{ post.text|linebreaksbr }}</p>
+<!-- Contenedor para las imágenes -->
+<div class="image-container">
+    
+    <img src="{% static 'img/alrededores.jpg' %}" alt="Alrededores de Vigo">
+    <img src="{% static 'img/bichitos.jpg' %}" alt="una de mariposas">
+    <img src="{% static 'img/eclip.jpg' %}" alt="eclipse ">
+    <img src="{% static 'img/laluz.jpg' %}" alt=" foto de rayos">
+</div>
+
 
     {% block content %}
-    <img src="{% static 'img/Atardecer_de_verano.jpg' %}" alt="Una tarde de verano" style="display:flex">
+    
     
     {% endblock %}
 </body>
