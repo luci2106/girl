@@ -1,6 +1,17 @@
 body{
-    background-color: yellow;
+    background-color: powderblue;
     bottom: auto;
+
+}
+
+.title {
+    text-align: center;
+    color: purple;
     
 }
 
+.text {
+    text-align: justify;
+    color: purple;
+    
+}
